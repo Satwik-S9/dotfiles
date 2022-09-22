@@ -1,0 +1,54 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+# ⟫ ⊙
+#format = "$directoryΞ $batteryΞ$memory_usage$conda\n$character"
+format = """ in ⊙ $directory$git_branch$git_status$conda$memory_usage$battery\n $character"""
+#right_format = """$conda$memory_usage$battery"""
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[❯](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[❯](bold red)"
+# success_symbol = format
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 20%
+threshold = 20
+style = "bold red"
+
+[[battery.display]] # "bold yellow" style between 20% and 50%
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]] # "bold blue" style between 50% and 80%
+threshold = 80
+style = "bold blue"
+
+[[battery.display]] # "bold #7daea3"" style between 80% and 100%
+threshold = 100
+style = "bold #7daea3"
+
+[conda]
+format = "[\uE0B6](#e52165)[$symbol$environment]($style)[\uE0B4](#e52165) Ξ"
+style = "bold fg:#0d1137 bg:#e52165"
+
+[directory]
+format = "[[\uE0B6](#e9d10f) $path [\uE0B4](#e9d10f)]($style)[$read_only]($read_only_style) "
+truncation_length = 2
+truncation_symbol = "…/"
+style = "bold bold fg:#0d1137 bg:#e9d10f"
+home_symbol = "⌂" 
+
+[memory_usage]
+format= "[$symbol ${ram}( | ${ram_pct} )]($style)Ξ "
+disabled = false
+threshold = -1
+symbol = ""
+style = "bold dimmed green"
+
