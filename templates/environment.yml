@@ -1,0 +1,19 @@
+# This is a template for the environment.yml file that can be used by conda to install and instantiate an environment
+
+name: mbd
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.9
+  - numpy=1.22.*
+  - networkx
+  - pytorch 
+  - torchvision 
+  - cudatoolkit=11.3
+  - tqdm
+  - pyyaml
+  - matplotlib
+  - scipy
+  - scikit-learn
