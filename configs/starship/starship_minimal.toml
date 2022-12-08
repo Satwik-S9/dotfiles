@@ -20,16 +20,17 @@ $character
 add_newline = true
 
 [cmd_duration]
+style = "bold fg:#f26687"
 min_time = 500
-format = "[took $duration](bold yellow) "
+format = "[took $duration]($style) "
 
 [c]
 symbol = " "
 
 [conda]
-style = "fg:purple"
+style = "fg:#e2bbef"
 symbol = " "
-format = "[$symbol$environment ]($style)"
+format = "via [$symbol$environment ]($style)"
 
 [character] # The name of the module we are configuring is "character"
 success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
@@ -42,9 +43,9 @@ truncation_symbol = "~/•/"
 read_only = " "
 
 [directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
+"Documents" = ""
+"Downloads" = ""
+"Music" = ""
 "Pictures" = " "
 
 
@@ -102,7 +103,7 @@ symbol = " "
 
 [python]
 symbol = " "
-style = "yellow"
+style = "fg:#edd76b"
 format = '[$symbol($version) ]($style)'
 
 [rlang]
