@@ -1,0 +1,155 @@
+format = """
+[╭─](#60c8fc)\   
+[](#9a348e)\
+$username\
+[](bg:#DA627D fg:#9a348e)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#cdf556)\
+$c\
+$golang\
+$java\
+$julia\
+$rust\
+$python\
+[](fg:#cdf556 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#33658A)\
+$time\
+[  ](fg:#33658A)\
+\n\
+$character
+"""
+#start: #9a348e
+#bd42ae
+right_format = """$cmd_duration$conda$battery"""
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bold fg:#ffffff bg:#9a348e"
+style_root = "bold fg:#ffffff bg:#9a348e"
+format = '[ $user ]($style)'
+
+# The "success_symbol" segment is being set to "➜" with the color "bold green"
+[character] 
+success_symbol = "[╰─cmd──](bold #bcff40)[❯](bold #bcff40)[❯](bold #60c8fc)" #a4db3d··
+error_symbol = "[╰─cmd──](bold red)[❯](bold red)[❯](bold #e37336)" #ed6678··
+# success_symbol = "[❯](bold green)[❯](bold #60c8fc)"
+# error_symbol = "[❯](bold red)[❯](bold #e37336)"
+
+[directory]
+style = "fg:#000000 bg:#DA627D"
+format = "[ $path ]($style)"
+truncation_length = 2
+home_symbol = "舎"
+truncation_symbol = "舎/…/"
+
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = " "
+style = "fg:#000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "fg:#000000 bg:#06969A"
+format = '[ $symbol $context ]($style)$path'
+
+[git_branch]
+symbol = ""  #""
+style = "fg:#000000 bg:#FCA17D"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:#000000 bg:#FCA17D"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "fg:#000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "fg:000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "fg:#000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "fg:#000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "fg:#000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:#000000 bg:#cdf556"
+format = '[ $symbol ($version) ]($style)'
+
+[cmd_duration]
+disabled=false
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bold fg:#ffffff bg:#33658A"
+format = '[ $time ]($style)'
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 20%
+threshold = 20
+style = "bold red"
+
+[[battery.display]] # "bold yellow" style between 20% and 50%
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]] # "bold blue" style between 50% and 80%
+threshold = 80
+style = "bold blue"
+
+[[battery.display]] # "bold #7daea3"" style between 80% and 100%
+threshold = 100
+style = "bold #7daea3"
+
+[conda]
+format = "[\uE0B6](#e52165)[$symbol$environment]($style)[\uE0B4](#e52165) • "
+style = "bold fg:#0d1137 bg:#e52165"
+symbol = "#"
+
