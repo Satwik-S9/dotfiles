@@ -1,4 +1,7 @@
+
+# can use #DF6589 INSTEAD OF RED #3C1053
 format = """
+[](#3C1053)[ ](bg:#3C1053 fg:red)[](#3C1053) : \
 $username\
 $directory\
 $git_branch\
@@ -15,20 +18,20 @@ $cmd_duration\
 $character
 """
 
-
-
 add_newline = true
 
 [cmd_duration]
-style = "bold fg:#f26687"
+style = "bold fg:#b472ed"
 min_time = 500
 format = "[took $duration]($style) "
 
 [c]
+detect_extensions = ["c", "h", "cpp", "hpp"]
+commands = [ [ "cc", "--version" ], [ "gcc", "--version" ], [ "clang", "--version" ], [ "g++", "--version" ], [ "clang++", "--version" ] ]
 symbol = " "
 
 [conda]
-style = "fg:#e2bbef"
+style = "fg:#ff80c3"
 symbol = " "
 format = "via [$symbol$environment ]($style)"
 
@@ -37,15 +40,16 @@ success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set
 error_symbol = "[➜](bold red)"
 
 [directory]
+style = "bold fg:cyan"
 truncation_length = 2
-home_symbol = "( • )"
+home_symbol = "( \uE12C )"
 truncation_symbol = "~/•/"
 read_only = " "
 
 [directory.substitutions]
-"Documents" = ""
-"Downloads" = ""
-"Music" = ""
+"Documents" = "🗎 "
+"Downloads" = " "
+"Music" = " "
 "Pictures" = " "
 
 
@@ -103,7 +107,7 @@ symbol = " "
 
 [python]
 symbol = " "
-style = "fg:#edd76b"
+style = "fg:purple"
 format = '[$symbol($version) ]($style)'
 
 [rlang]
