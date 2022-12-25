@@ -1,7 +1,9 @@
 
-# can use #DF6589 INSTEAD OF RED #3C1053
+# can use #DF6589 INSTEAD OF RED #3C1053  
+# [](#3C1053)[ ](bg:#3C1053 fg:#DF6589)[](#3C1053) : \
+# [](#2b303a)[  ](bg:#2b303a fg:#ff934f)[](#2b303a) : \
 format = """
-[](#3C1053)[ ](bg:#3C1053 fg:red)[](#3C1053) : \
+[](#E7A977)[ ](bg:#E7A977 fg:#272727)[](#E7A977) : \
 $username\
 $directory\
 $git_branch\
@@ -31,16 +33,16 @@ commands = [ [ "cc", "--version" ], [ "gcc", "--version" ], [ "clang", "--versio
 symbol = " "
 
 [conda]
-style = "fg:#ff80c3"
+style = "bg:#f72585 fg:#000000"
 symbol = " "
-format = "via [$symbol$environment ]($style)"
+format = "via [](#f72585)[$symbol$environment]($style)[](#f72585) "
 
 [character] # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[➜](bold red)"
+success_symbol = "[❯](bold #9bf6ff)[❯](bold #caffbf)" # "[➜](bold #daff7d)" 
+error_symbol = "[❯](bold #ffd6a5)[❯](bold #ffadad)" # "[➜](bold #ee7674)"
 
 [directory]
-style = "bold fg:cyan"
+style = "fg:#faedcb" #DABFFF
 truncation_length = 2
 home_symbol = "( \uE12C )"
 truncation_symbol = "~/•/"
@@ -107,8 +109,9 @@ symbol = " "
 
 [python]
 symbol = " "
-style = "fg:purple"
+style = "fg:bold yellow"
 format = '[$symbol($version) ]($style)'
+pyenv_prefix = ":pyenv:"
 
 [rlang]
 symbol = "ﳒ "
