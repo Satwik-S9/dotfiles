@@ -17,6 +17,7 @@ from kitty.tab_bar import (
 
 timer_id = None
 
+
 def draw_tab(
     draw_data: DrawData,
     screen: Screen,
