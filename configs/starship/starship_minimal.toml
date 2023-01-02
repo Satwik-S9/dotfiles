@@ -49,10 +49,10 @@ truncation_symbol = "~/•/"
 read_only = " "
 
 [directory.substitutions]
-"Documents" = "🗎 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Documents" = "#DOCS"
+"Downloads" = "#DOWNLOADS"
+"Music" = "#MUSIC"
+"Pictures" = "#PICTURES"
 
 
 [docker_context]
