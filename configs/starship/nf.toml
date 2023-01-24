@@ -81,3 +81,7 @@ symbol = " "
 
 [spack]
 symbol = "🅢 "
+
+[character] 
+success_symbol = "👉" 
+error_symbol = "👎" 
