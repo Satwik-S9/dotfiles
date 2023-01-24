@@ -24,9 +24,12 @@ min_time = 500
 format = "[](#b472ed)[took $duration]($style)[](#b472ed) "
 
 [c]
+style = "bold bg:#afd75f fg:#212121"
 detect_extensions = ["c", "h", "cpp", "hpp"]
 commands = [ [ "cc", "--version" ], [ "gcc", "--version" ], [ "clang", "--version" ], [ "g++", "--version" ], [ "clang++", "--version" ] ]
 symbol = " "
+format = "via [](#afd75f)[$symbol($version(-$name) )]($style)[](#afd75f) " 
+
 
 [conda]
 style = "bg:#f72585 fg:#000000"
@@ -40,7 +43,7 @@ error_symbol = "[❯](bold yellow)[❯](bold red)" #OTHER-OPTIONS: "[➜](bold #
 [directory]
 style = "bg:#DABFFF fg:#212121"
 truncation_length = 2
-home_symbol = "( \uE12C )"
+home_symbol = " \uE12C "
 truncation_symbol = "~/•/"
 read_only = " "
 format = "[](#DABFFF)[$path]($style)[](#DABFFF) "
