@@ -41,15 +41,15 @@
 
     /* Comment the color theme you don't want to use */
 
-    /* Dark Theme Colors */
+    /* Dark Theme Colors 
     --window-colour:               #1f2122;
     --secondary-colour:            #141616;
-    --inverted-colour:             #FAFAFC;
+    --inverted-colour:             #FAFAFC; */
 
-    /* Light Theme Colors 
+    /* Light Theme Colors */ 
     --window-colour:               #FAFAFC;
     --secondary-colour:            #EAEAEC;
-    --inverted-colour:             #1E2021;*/
+    --inverted-colour:             #1E2021;
     
 
      
@@ -248,7 +248,7 @@ window,
 
 /* Active Tab borders  */
 .tabbrowser-tab[selected="true"] > .tab-stack > .tab-background {
-  border: 2px solid var(--uc-identity-color-yellow) !important;
+  border: 2px solid #fb2004 !important; /* #d8b7ff */
 }
 
 /* tab close button options */
@@ -503,3 +503,29 @@ See the above repository for updates as well as full license text. */
 /*BOOKMARK BAR TEXT COLOR*/
 #personal-bookmarks .bookmark-item > .toolbarbutton-text {color:var(--uc-inverted-colour) !important;}
 
+
+/* GRADIENT-URLBAR */
+/* #urlbar-background,#urlbar{  */
+/* border-radius: 6px !important ; */
+/* background-color: #2B2A33 !important; */
+/* border: transparent !important; */
+/* } */
+/* #urlbar{ */
+/* background-image: linear-gradient(90deg, #9400FF, #ba00e5, #df06b9, #e62da7, #f13b95, #f64d86, #f85f7a, #fc7169, #f9845b, #e8ab52); */
+/* } */
+/**/
+/* #urlbar-background{  */
+/* margin-bottom: 2px !important; */
+/* margin-top: 2px !important; */
+/* margin-left: 2px !important; */
+/* margin-right: 2px !important; */
+/**/
+/* } */
+/**/
+/* #urlbar[focused=true] #urlbar-background{ */
+/* background-color: rgb(43, 42, 51, 0.85) !important; */
+/* } */
+/**/
+/* #urlbar[open=true] #urlbar-background { */
+/* background-color: rgb(43, 42, 51, 0.85) !important; */
+/* } */
