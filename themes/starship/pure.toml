@@ -1,0 +1,60 @@
+format = """
+ $username\
+ $hostname\
+ $directory\
+ $git_branch\
+ $git_state\
+ $git_status\
+ $cmd_duration\
+ $line_break\
+ $docker_context\
+ $conda\
+ $python\
+ [  : ](#E4995B)\
+$character"""
+
+[directory]
+style = "bright-blue"
+
+[character]
+success_symbol = "[❭](#acdeb6)[❭](#aff3ff)[❭](#eb91ff)" #➜
+error_symbol = "[⤬](bold red)"
+vimcmd_symbol = "[⥰](bold purple)"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "fg:#BCD8C1"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "fg:#90A9B7"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "fg:#BCD3F2"
+
+[conda]
+style = "bright-purple"
+symbol = " "
+format = "[$symbol$environment]($style) "
+
+[docker_context]
+style = "yellow"
+symbol = " "
+format = "[$symbol$context]($style) "
+

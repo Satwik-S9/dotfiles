@@ -1,0 +1,118 @@
+format = """
+[](#E7A977)[ ](bg:#E7A977 fg:#272727)[](#E7A977) : \
+$username\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$golang\
+$java\
+$julia\
+$rust\
+$python\
+$conda\
+$docker_context\
+$cmd_duration\
+$character
+"""
+
+add_newline = true
+
+[cmd_duration]
+style = "bold bg:#b472ed fg:#212121"
+min_time = 500
+format = "[](#b472ed)[took $duration]($style)[](#b472ed) "
+
+[c]
+style = "bold bg:#afd75f fg:#212121"
+detect_extensions = ["c", "h", "cpp", "hpp"]
+commands = [ [ "cc", "--version" ], [ "gcc", "--version" ], [ "clang", "--version" ], [ "g++", "--version" ], [ "clang++", "--version" ] ]
+symbol = " "
+format = "via [](#afd75f)[$symbol($version(-$name) )]($style)[](#afd75f) " 
+
+
+[conda]
+style = "bg:#f72585 fg:#000000"
+symbol = " "
+format = "via [](#f72585)[$symbol$environment]($style)[](#f72585) "
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[❯](bold cyan)[❯](bold green)" #OTHER-OPTIONS: "[➜](bold #daff7d)" #caffbf #9bf6ff
+error_symbol = "[❯](bold yellow)[❯](bold red)" #OTHER-OPTIONS: "[➜](bold #ee7674)" #ffd6a5 #ffadad
+
+[directory]
+style = "bg:#DABFFF fg:#212121"
+truncation_length = 2
+home_symbol = " \uE12C "
+truncation_symbol = "~/•/"
+read_only = " "
+format = "[](#DABFFF)[$path]($style)[](#DABFFF) "
+
+[directory.substitutions]
+"Documents" = "#DOCS"
+"Downloads" = "#DOWNLOADS"
+"Music" = "#MUSIC"
+"Pictures" = "#PICTURES"
+
+[docker_context]
+style = "bg:blue fg:#212121"
+symbol = " "
+format = "[](blue)[$symbol $context]($style)[](blue) "
+
+[git_branch]
+symbol = "  "  #""
+style = "bold fg:#212121 bg:#b5f04f"
+format = '[](blue)[ git: ](bold fg:#212121 bg:blue)[$symbol$branch]($style)' 
+
+[git_status]
+style = "bold fg:#212121 bg:#b5f04f"
+format = '[$all_status$ahead_behind]($style)[](#b5f04f) ' 
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+style = "bold bg:yellow fg:#212121"
+format = '[](yellow)[$symbol($version)]($style)[](yellow) '
+pyenv_prefix = ":pyenv:"
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+

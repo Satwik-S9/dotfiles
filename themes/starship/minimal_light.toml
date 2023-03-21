@@ -1,0 +1,123 @@
+format = """
+[](red)[ ](bg:red fg:#3C1053)[](red) : \
+$username\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$golang\
+$java\
+$julia\
+$rust\
+$python\
+$conda\
+$docker_context\
+$cmd_duration\
+$character
+"""
+
+add_newline = true
+
+[cmd_duration]
+style = "bold fg:#b472ed"
+min_time = 500
+format = "[took $duration]($style) "
+
+[c]
+detect_extensions = ["c", "h", "cpp", "hpp"]
+commands = [ [ "cc", "--version" ], [ "gcc", "--version" ], [ "clang", "--version" ], [ "g++", "--version" ], [ "clang++", "--version" ] ]
+style = "bold fg:#71a500"
+symbol = " "
+
+[conda]
+style = "fg:#ff58ba"
+symbol = " "
+format = "via [$symbol$environment ]($style)"
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](bold red)"
+
+[directory]
+style = "bold fg:#574880"
+truncation_length = 2
+home_symbol = "( • )"
+truncation_symbol = "~/•/"
+read_only = " "
+
+[directory.substitutions]
+"Documents" = "🗎 "
+"Downloads" = ""
+"Music" = ""
+"Pictures" = " "
+
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "  #""
+style = "bold fg:#8dc719"
+format = '[git:\(](bold blue)[$symbol$branch]($style)'
+
+[git_status]
+style = "bold fg:#8dc719"
+format = '[$all_status$ahead_behind]($style)[\)](bold blue) '
+
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+style = "fg:#ea8e2a"
+format = '[$symbol($version) ]($style)'
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
