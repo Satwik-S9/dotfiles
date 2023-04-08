@@ -14,10 +14,10 @@ format = """
 $character"""
 
 [directory]
-style = "bright-blue"
+style = "#ddaabb"
 
 [character]
-success_symbol = "[❭](#acdeb6)[❭](#aff3ff)[❭](#eb91ff)" #➜
+success_symbol = "[❭](bold #98CE00)" # ❭➜
 error_symbol = "[⤬](bold red)"
 vimcmd_symbol = "[⥰](bold purple)"
 
@@ -50,11 +50,11 @@ style = "fg:#BCD3F2"
 
 [conda]
 style = "bright-purple"
-symbol = " "
+symbol = "  "
 format = "[$symbol$environment]($style) "
 
 [docker_context]
 style = "yellow"
-symbol = " "
+symbol = "  "
 format = "[$symbol$context]($style) "
 
