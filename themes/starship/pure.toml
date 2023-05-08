@@ -1,23 +1,24 @@
 format = """
- $username\
- $hostname\
- $directory\
- $git_branch\
- $git_state\
- $git_status\
- $cmd_duration\
- $line_break\
- $docker_context\
- $conda\
- $python\
- [  : ](#E4995B)\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$docker_context\
+$conda\
+$python\
+ [ : ](#E4995B)\
 $character"""
 
 [directory]
-style = "#ddaabb"
+# style = "#ddaabb"
+style = "bright-cyan"
 
 [character]
-success_symbol = "[❭](bold #98CE00)" # ❭➜
+success_symbol = "[❭](bright-green)" # ❭➜
 error_symbol = "[⤬](bold red)"
 vimcmd_symbol = "[⥰](bold purple)"
 
@@ -50,11 +51,11 @@ style = "fg:#BCD3F2"
 
 [conda]
 style = "bright-purple"
-symbol = "  "
+symbol = " "
 format = "[$symbol$environment]($style) "
 
 [docker_context]
 style = "yellow"
-symbol = "  "
+symbol = " "
 format = "[$symbol$context]($style) "
 
