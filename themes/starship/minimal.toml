@@ -3,7 +3,7 @@
 # [](#3C1053)[ ](bg:#3C1053 fg:#DF6589)[](#3C1053) : \
 # [](#2b303a)[  ](bg:#2b303a fg:#ff934f)[](#2b303a) : \
 format = """
-[](#E7A977)[ ](bg:#E7A977 fg:#272727)[](#E7A977) : \
+[ :](#3E92CC) \
 $username\
 $directory\
 $git_branch\
@@ -38,8 +38,8 @@ symbol = " "
 format = "via [](#f72585)[$symbol$environment]($style)[](#f72585) "
 
 [character] # The name of the module we are configuring is "character"
-success_symbol = "[❯](bold cyan)[❯](bold green)" # "[➜](bold #daff7d)" #caffbf #9bf6ff
-error_symbol = "[❯](bold yellow)[❯](bold red)" # "[➜](bold #ee7674)" #ffd6a5 #ffadad
+success_symbol = "[➜](bold #daff7d)"  # "[❯](bold cyan)[❯](bold green)" # "[➜](bold #daff7d)" #caffbf #9bf6ff
+error_symbol = "[➜](bold #ee7674)"    # "[❯](bold yellow)[❯](bold red)" # "[➜](bold #ee7674)" #ffd6a5 #ffadad
 
 [directory]
 style = "fg:#faedcb" #DABFFF
