@@ -88,16 +88,18 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
 alias tor="./Downloads/tools/tor-browser-linux64-11.5.7_en-US/tor-browser_en-US/Browser/start-tor-browser --detach"
 alias bat="batcat"
 alias magick="~/Downloads/tools/magick"
 alias extree="exa -T --icons"
-alias exa="exa --icons"
-alias exast="exa -abghHliS"
-alias exal="exa -lhba --icons"
+alias ls="exa --icons"
+alias la="exa -abghHliS --icons"
+alias ll="exa -lhba --icons"
+alias lt="exa -lh --icons"
+alias vim="nvim"
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -259,11 +261,19 @@ shopt -s cdable_vars
 # ============= END =============== #
 
 # STARSHIP
-export STARSHIP_CONFIG=~/dotfiles/configs/starship/pure.toml
+export STARSHIP_CONFIG=~/dotfiles/themes/starship/pure.toml
 eval "$(starship init bash)"
 export PATH=/usr/local/cuda-11.7/bin${PATH:+:${PATH}}
 export PATH="$PATH:/home/satwik/Downloads/tools/julia-1.8.3/bin"
-export PATH="$PATH:/home/satwik/Downloads/tools/pfetch"
+export PATH="$PATH:/home/satwik/.local/kitty.app/bin"
+
+# PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"
 
 # ==== STARTUP SCRIPTS ==== #
-pfetch
+neofetch
+set -o emacs
