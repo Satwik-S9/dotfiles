@@ -1,28 +1,28 @@
 # Font configuration
 font:
   normal:
-    # family: "SauceCodePro Nerd Font"
-    family: "Meslo LGS NF"
-    # family: "Jetbrains Mono NL"
+    # family: "RobotoMono Nerd Font"
+    # family: "Jetbrains Mono "
+    family: "JetBrainsMonoNL Nerd Font"
     style: "regular"
 
-  size: 11
+  size: 7
 
 # Window Configuration
 window:
   padding:
-    x: 3
-    y: 3
+    x: 4
+    y: 4
  
   dimensions:
     columns: 144
-    lines: 45
+    lines: 36
     
-  opacity: 1
-  decorations: None
+  opacity: 0.90
+  decorations: Full
 
 shell:
-  program: /bin/bash
+  program: /usr/bin/tmux
 
 cursor:
   style:
@@ -405,6 +405,48 @@ schemes:
       cyan:    '#54ced6'
       white:   '#282a2e'
 
+  ### Rose Pine ###
+  RosePine: &RosePine
+    primary:
+      background: "0x191724"
+      foreground: "0xe0def4"
+    cursor:
+      text: "0xe0def4"
+      cursor: "0x524f67"
+    vi_mode_cursor:
+      text: "0xe0def4"
+      cursor: "0x524f67"
+    line_indicator:
+      foreground: None
+      background: None
+    selection:
+      text: "0xe0def4"
+      background: "0x403d52"
+    normal:
+      black: "0x26233a"
+      red: "0xeb6f92"
+      green: "0x31748f"
+      yellow: "0xf6c177"
+      blue: "0x9ccfd8"
+      magenta: "0xc4a7e7"
+      cyan: "0xebbcba"
+      white: "0xe0def4"
+    bright:
+      black: "0x6e6a86"
+      red: "0xeb6f92"
+      green: "0x31748f"
+      yellow: "0xf6c177"
+      blue: "0x9ccfd8"
+      magenta: "0xc4a7e7"
+      cyan: "0xebbcba"
+      white: "0xe0def4"
+    hints:
+      start:
+        foreground: "#908caa"
+        background: "#1f1d2e"
+      end:
+        foreground: "#6e6a86"
+        background: "#1f1d2e"
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
 ## ###################################################################
@@ -422,7 +464,7 @@ schemes:
 # *TomorrowNight
 # *VSCode
 
-# colors: *TomorrowNight
+colors: *GruvboxDark
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
