@@ -1,0 +1,7 @@
+Host 10.6.0.33
+        HostName 10.6.0.33
+        User utsa
+
+Host github.com
+        HostName github.com
+        IdentityFile=/home/ssrivastava/.ssh/github
