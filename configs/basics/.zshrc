@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -15,9 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# THEMES
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="half-life"  # bira, half-life, linuxonly, 
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -36,7 +27,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-precmd () {print -Pn "\e]0;%~\a"}
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -80,7 +70,6 @@ precmd () {print -Pn "\e]0;%~\a"}
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
@@ -102,88 +91,53 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+
+###############################
+## CUSTOM CONFIGS START HERE ##
+###############################
+# Export Neovim as the default editor
+export EDITOR=nvim
+
 # ALIASES
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 alias lt="exa -lhb --icons"
 alias lst="exa -lhba --icons"
 alias ls="exa --icons"
-alias magick="~/Downloads/tools/magick"
-alias bat="batcat"
-alias tedit="gnome-text-editor"
-alias kssh="kitty +kitten ssh"
 alias vim="nvim"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# >>> conda initialize >>>
+### START CONDA INIT ###
+# >>> conda initialize >>> #
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/satwik/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/ssrivastava/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/satwik/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/satwik/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/ssrivastava/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ssrivastava/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/satwik/miniconda3/bin:$PATH"
+        export PATH="/home/ssrivastava/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+conda config --set auto_activate_base false
+### END-CONDA ###
 
-conda deactivate
-
-# STARSHIP THEME
+# STARSHIP THEME 
 eval "$(starship init zsh)"
-## DARK THEME
-export STARSHIP_CONFIG=~/dotfiles/themes/starship/pure.toml
-## LIGHT THEME
+## Dark Theme
+export STARSHIP_CONFIG=~/dotfiles/themes/starship/minimal.toml
+## Light Theme
 # export STARSHIP_CONFIG=~/dotfiles/configs/starship/starship_minimal_light.toml
  
+# Poetry 
+export PATH="/home/ssrivastava/.local/bin:$PATH"
 
-# Poetry completions
-#fpath+=~/.zfunc
-#autoload -Uz compinit && compinit
-
-#PYENV
+# PYENV
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
 eval "$(pyenv virtualenv-init -)"
 
-# THEMES
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="bira"  # bira, half-life, linuxonly, 
-
-# PATHS
-export DOTNET_ROOT=/snap/dotnet-sdk/current
-export NVCC_PREPEND_FLAGS='-allow-unsupported-compiler'
-export PATH=/usr/local/cuda-11.7/bin${PATH:+:${PATH}}
-export PATH="$PATH:/home/satwik/Downloads/tools/julia-1.8.3/bin"
-export PATH="${PATH}:${HOME}/.local/bin/"
-export PATH="${PATH}:${HOME}/.local/kitty.app/bin"
-#
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.fonts/*.sh
-
-# ZOXIDE
-eval "$(zoxide init zsh)"
-
 # STARTUP SCRIPTS
-##: Custom Neofetch Based on the terminal being used
-# TE="$(basename "/"$(ps -o cmd -f -p $(cat /proc/$(echo $$)/stat | cut -d \  -f 4) | tail -1 | sed 's/ .*$//'))"
-# KITTY="kitty"
-# if [[ "$TE" == "$KITTY" ]]; then
-#   neofetch --backend kitty --source ~/Downloads/icons/ubuntu_med2.png --image_size none
-# else
-#   neofetch
-# fi
-
 ##: Simple Neofetch irrespective of the terminal
 neofetch
-
-##: Set the vi mode in the shell
-set -o emacs
